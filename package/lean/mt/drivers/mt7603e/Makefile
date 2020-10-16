@@ -56,7 +56,8 @@ define Build/Compile
 endef
 
 define KernelPackage/mt7603e/install
-	$(INSTALL_DIR) $(1)/etc/wireless/mt7603/
+	$(INSTALL_DIR) $(1)/lib/wifi/
+	$(INSTALL_BIN) ./files/mt7603.lua $(1)/lib/wifi/
 endef
 
 $(eval $(call KernelPackage,mt7603e))

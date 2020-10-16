@@ -44,7 +44,8 @@ define Build/Compile
 endef
 
 define KernelPackage/mt76x2e/install
-	$(INSTALL_DIR) $(1)/etc/wireless/mt7612/
+	$(INSTALL_DIR) $(1)/lib/wifi/
+	$(INSTALL_BIN) ./files/mt7612.lua $(1)/lib/wifi/
 endef
 
 $(eval $(call KernelPackage,mt76x2e))

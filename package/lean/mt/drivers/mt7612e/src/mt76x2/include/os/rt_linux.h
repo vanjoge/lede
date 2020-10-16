@@ -133,7 +133,7 @@ typedef struct usb_ctrlrequest devctrlrequest;
  #define SINGLE_SKU_TABLE_FILE_NAME	"/etc/Wireless/RT2860/SingleSKU.dat"
  #define CARD_INFO_PATH			"/etc/Wireless/RT2860/RT2860APCard.dat"
 #else
- #define AP_PROFILE_PATH		"/etc/wireless/mt7615/mt7615.2.dat"
+ #define AP_PROFILE_PATH		"/etc/wireless/mt7612/mt7612.dat"
  #define SINGLE_SKU_TABLE_FILE_NAME	"/etc/Wireless/iNIC/SingleSKU.dat"
  #define CARD_INFO_PATH			"/etc/Wireless/iNIC/RT2860APCard.dat"
 #endif

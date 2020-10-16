@@ -205,7 +205,8 @@ define Build/Compile
 endef
 
 define KernelPackage/mt7615d/install
-	$(INSTALL_DIR) $(1)/etc/wireless/mt7615/
+	$(INSTALL_DIR) $(1)/lib/wifi/
+	$(INSTALL_BIN) ./files/mt7615.lua $(1)/lib/wifi/
 endef
 
 $(eval $(call KernelPackage,mt7615d))

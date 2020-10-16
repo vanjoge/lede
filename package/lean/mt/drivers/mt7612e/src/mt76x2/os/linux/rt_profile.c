@@ -53,7 +53,7 @@ struct dev_type_name_map{
 #define FIRST_IF_SINGLE_SKU_PATH	"/etc/Wireless/RT2860/SingleSKU.dat"
 #define FIRST_CHIP_ID			xdef_to_str(CONFIG_RT_FIRST_CARD)
 
-#define SECOND_AP_PROFILE_PATH		"/etc/wireless/mt7615/mt7615.2.dat"
+#define SECOND_AP_PROFILE_PATH		"/etc/wireless/mt7612/mt7612.dat"
 #define SECOND_STA_PROFILE_PATH		"/etc/Wireless/iNIC/iNIC_sta.dat"
 #define SECOND_IF_SINGLE_SKU_PATH	"/etc/Wireless/iNIC/SingleSKU.dat"
 #define SECOND_CHIP_ID			xdef_to_str(CONFIG_RT_SECOND_CARD)
