@@ -23,8 +23,8 @@ PKG_CONFIG_DEPENDS := \
 	CONFIG_PACKAGE_kmod-brcm-wl \
 	CONFIG_PACKAGE_kmod-brcm-wl-mini \
 	CONFIG_PACKAGE_kmod-brcm-wl-mimo \
-	CONFIG_PACKAGE_kmod-mt7615d_dbdc \
-	CONFIG_PACKAGE_kmod-cfg80211
+	CONFIG_PACKAGE_kmod-cfg80211 \
+	CONFIG_PACKAGE_mt_wifi
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -76,8 +76,8 @@ IWINFO_BACKENDS := \
 	$(if $(CONFIG_PACKAGE_kmod-brcm-wl),wl) \
 	$(if $(CONFIG_PACKAGE_kmod-brcm-wl-mini),wl) \
 	$(if $(CONFIG_PACKAGE_kmod-brcm-wl-mimo),wl) \
-	$(if $(CONFIG_PACKAGE_kmod-mt7615d_dbdc),ra) \
-	$(if $(CONFIG_PACKAGE_kmod-cfg80211),nl80211)
+	$(if $(CONFIG_PACKAGE_kmod-cfg80211),nl80211) \
+	$(if $(CONFIG_PACKAGE_mt_wifi),mtwifi)
 
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
@@ -104,7 +104,11 @@ define Package/libiwinfo/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/libiwinfo.so $(1)/usr/lib/libiwinfo.so
 	$(INSTALL_DIR) $(1)/usr/share/libiwinfo
+ifneq (,$(CONFIG_PACKAGE_mt_wifi))
+	$(INSTALL_DATA) ./files/hardware.txt $(1)/usr/share/libiwinfo/hardware.txt
+else
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/hardware.txt $(1)/usr/share/libiwinfo/hardware.txt
+endif
 endef
 
 define Package/libiwinfo-lua/install
