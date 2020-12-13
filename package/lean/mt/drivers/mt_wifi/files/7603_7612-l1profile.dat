@@ -1,6 +1,6 @@
 Default
-INDEX0=MT7603
-INDEX0_profile_path=/etc/wireless/mt7615/mt7615.1.dat
+INDEX0=MT7603E
+INDEX0_profile_path=/etc/wireless/mt7603e/mt7603e.dat
 INDEX0_EEPROM_offset=0x0
 INDEX0_EEPROM_size=0x400
 INDEX0_EEPROM_name=e2p
